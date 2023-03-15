@@ -4,7 +4,6 @@ const managementData = require("./../model/managementWether");
 
 router.get("/weathers", (req, res) => {
   managementData.getDBLocations().then((data) => {
-    console.log(data);
     res.status(200).send(data);
   });
 });
