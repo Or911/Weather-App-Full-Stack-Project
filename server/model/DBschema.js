@@ -4,7 +4,10 @@ const schema = mongoose.Schema;
 const WeatherSchema = new schema({
     name:String ,
     icon:String ,
-    weather:Object
+    description:String,
+    temp:String,
+    humidity:String,
+    wind:String
 })
 
 const Weather = mongoose.model('Weather', WeatherSchema);

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
     <div class="window" >
@@ -15,31 +15,54 @@
 
             <div class="searchBar input-group mb-3">
                 <input type="text" class="form-control" placeholder="Enter a country / city" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button type="button" class="btn btn-primary btn-lg">Search</button>
+                <button type="button" class="btn btn-primary btn-lg" >Search</button>
           </div>
 
 
-          <!-- <script id="Weather-template" type="text/x-handlebars-template">
-                <div class="card text-bg-light mb-3" style="max-width: 150vh;">
-                <div class="card-header">{{name}}</div>
-                <div class="card-body bg-transparent border-success">
-                  <h5 class="card-title">{{weather.description}}</h5>
-                  <img src="https://openweathermap.org/img/wn/{{icon}}@4x.png" alt="img">
-                  <p class="card-text">Temp:{{weather.temp}} c</p>
-                  <p class="card-text">humidity: {{weather.humidity}}%</p>
-                  <p class="card-text">Speed wind: {{weather.wind}}</p>
+          <script id="Weather-template" type="text/x-handlebars-template">
+            <div class="cards card text-bg-light mb-3" style="max-width: 150vh;">
+              <div class="card-header" style="background-color: rgb(191, 192, 194);"><h3>{{name}}</h3></div>
+              <div class="container" style="background-color: rgb(11,94,215); color: azure;">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="card-title">{{description}}</h5>
+                    <p class="card-text">{{temp}} :מעלות</p>
+                    <p class="card-text">{{humidity}}% :לחות</p>
+                    <p class="card-text"> {{wind}}: מהירות רוחות</p>
+                  </div>
+                  <div class="col">
+                    <img src="https://openweathermap.org/img/wn/{{icon}}@4x.png" alt="img">
+                    <button class="seveBT" data-name="{{name}}">+</button>
+                    <button class="deleteBT" data-name="{{name}}">-</button>
+                  </div>
                 </div>
-          </script> -->
+              </div>
+            </div>
+          </script>
 
-          <div class="Weathers-container">
-
-            <div class="card" >
-                <div class="Header">Header</div>
-                  <h5 class="card-title">Light card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <div class="Weathers-container" style="max-width: 150vh; padding: 80px 0 0 20%;">
+          
+            <!-- <div class="cards card text-bg-light mb-3" style="max-width: 150vh;">
+              <div class="card-header" style="background-color: rgb(191, 192, 194);"><h3>{{name}}</h3></div>
+              <div class="container" style="background-color: rgb(11,94,215); color: azure;">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="card-title">{{weather.description}}</h5>
+                    <p class="card-text">{{weather.temp}} :מעלות</p>
+                    <p class="card-text">{{weather.humidity}}% :לחות</p>
+                    <p class="card-text"> {{weather.wind}}: מהירות רוחות</p>
+                  </div>
+                  <div class="col">
+                    <img src="https://openweathermap.org/img/wn/10n@4x.png" alt="img">
+                    <button class="seveDeleteBT">+</button>
+                  </div>
                 </div>
+              </div>
+            </div> -->
 
           </div>
+
+
 
 
     <script src="./jquery/dist/jquery.js"></script>

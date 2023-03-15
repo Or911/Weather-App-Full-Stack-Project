@@ -1,4 +1,6 @@
+const { json } = require("body-parser");
 const express = require("express");
+const { parse } = require("path");
 const router = express.Router();
 const managementData = require("./../model/managementWether");
 
@@ -17,6 +19,7 @@ router.get("/weather/:name", (req, res) => {
 
 router.post("/weather/", (req, res) => {
   let locationData = req.body;
+  console.log(locationData)
   managementData.addLocation(locationData);
 });
 

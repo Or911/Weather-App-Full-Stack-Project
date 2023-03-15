@@ -12,3 +12,13 @@ $(".input-group").on("click","button",function(){
     })
 
 })
+$(".Weathers-container").on("click",".seveBT", function(){
+    let name =$(this).data("name")
+    serves.saveNewWeather(name)
+})
+
+serves.getSaveWeather().then(data => {
+    data.forEach(d => {
+        render.WeathersRender(d)
+    });
+})

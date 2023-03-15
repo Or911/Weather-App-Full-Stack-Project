@@ -11,12 +11,10 @@ const getWetherByLocations = function (name) {
     let wetherData = wether.data;
     dataWether.name = wetherData.name;
     dataWether.icon = wetherData.weather[0].icon;
-    dataWether.weather = {
-      description: wetherData.weather[0].description,
-      temp: wetherData.main.temp,
-      humidity: wetherData.main.humidity,
-      wind: wetherData.wind.speed,
-    };
+    dataWether.description = wetherData.weather[0].description
+    dataWether.temp = wetherData.main.temp
+    dataWether.humidity = wetherData.main.humidity
+    dataWether.wind = wetherData.wind.speed
     return dataWether;
   });
 };
@@ -25,6 +23,7 @@ const getDBLocations = function () {
 };
 
 const addLocation = function (locationData) {
+  console.log(locationData);
   let WeatherData = new Weather(locationData);
   WeatherData.save();
   console.log(WeatherData);
