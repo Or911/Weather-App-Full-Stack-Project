@@ -8,6 +8,13 @@ class Serves {
     return this.dataSave;
   }
 
+  saveLocalData(data) {
+    data.forEach(d => {
+      this.dataSave[d.name] = d
+    });
+    
+  }
+
   getNewWeather(name) {
     return $.ajax({
       method: "GET",
@@ -19,14 +26,20 @@ class Serves {
   }
 
   saveNewWeather(name) {
+    let data = this.newData[name] || this.dataSave[name]
+    return $.post("/weather", data)
+    .then(res =>{
+      return res
+    })
+  }
 
-    let data = this.newData[name]
-    console.log(data);
-    $.ajax({
-      method: "POST",
-      url: `/weather`,
-      data:(data),
-      dataType: 'json'
+  deleteWeather (name){
+   return $.ajax({
+      method: "DELETE",
+      url: `/weather/${name}`,
+    }).then((res) => {
+      return res
+      
     });
   }
 
@@ -35,6 +48,7 @@ class Serves {
       method: "GET",
       url: `/weathers`,
     }).then((data) => {
+      this.saveLocalData(data)
       return data
       
     });

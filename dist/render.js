@@ -4,9 +4,12 @@ class Render {
       this.template = Handlebars.compile(this.source);
       this.WeathersContainer = $(".Weathers-container");
     }
-    WeathersRender(data) {
-    //   this.WeathersContainer.empty();
+    WeathersRender(data ,sign) {
+      data.sign = sign || "+"
       let newHtml = this.template(data);
       this.WeathersContainer.append(newHtml);
+    }
+    buttonSevDel(bt , sign){
+      bt.html(sign)
     }
 }

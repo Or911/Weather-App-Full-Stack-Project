@@ -7,18 +7,32 @@ $(".input-group").on("click","button",function(){
     $(this).siblings("input").val("")
     serves.getNewWeather(location)
     .then((data)=> {
-        console.log(data);
         render.WeathersRender(data)
     })
 
 })
 $(".Weathers-container").on("click",".seveBT", function(){
     let name =$(this).data("name")
-    serves.saveNewWeather(name)
+    let content = $(this).html()
+   if (content === "+"){
+       serves.saveNewWeather(name)
+       .then(res =>{
+           if (res.successes){
+              render.buttonSevDel($(this), "-")
+           }
+        })
+    }
+    else{
+        serves.deleteWeather(name)
+       .then(res =>{
+           if (res.successes){
+              render.buttonSevDel($(this),"+")
+            }})
+    }
 })
-
 serves.getSaveWeather().then(data => {
+    let sign = "-"
     data.forEach(d => {
-        render.WeathersRender(d)
+        render.WeathersRender(d,sign)
     });
 })

@@ -16,21 +16,23 @@ const getWetherByLocations = function (name) {
     dataWether.humidity = wetherData.main.humidity
     dataWether.wind = wetherData.wind.speed
     return dataWether;
-  });
+  })
+  .catch(function (error) {
+    return {error: error.response}
+
+})
 };
 const getDBLocations = function () {
   return Weather.find({}).then((wether) => wether);
 };
 
 const addLocation = function (locationData) {
-  console.log(locationData);
   let WeatherData = new Weather(locationData);
   WeatherData.save();
-  console.log(WeatherData);
 };
 const deleteDBLocation = function (location) {
   return Weather.deleteOne({ name: location })
-  .then(() => {return `${location} was deleted`});
+  .then(() => {return `deleted`});
 };
 
 const managementData = {
