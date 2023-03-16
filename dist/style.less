@@ -1,10 +1,19 @@
 body{
     margin: 0;
 }
-.window {
+#imgBack{
   background-image: url("./img/backGround.jpg");
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  position: fixed;
+
+}
+.window {
+  z-index: 2;
+  width: 100%;
+  position: fixed;
+  background-image: url("./img/backGround.jpg");
+  overflow:hidden; 
   h1{
     color: white;
     margin: 0;
@@ -13,26 +22,45 @@ body{
   }
 }
 .searchBar{
-    width: 80%;
+  position: fixed;
+  // padding-left: 30%;
+    width: 100%;
+    display: block;
+    input{
+      display: block;
+    }
+    button{
+      position: relative;
+      display: block;
+      bottom: 38px;
+      left: 90%;
+    }
 }
 
-.Weather-container{
-  padding-top: 80px;
-  padding-left: 15%;
+.control{
   align-items: center;
-  align-content: center;
+  justify-items: center;
+  display: grid;
+  .seveBT{
+    width: 40px;
+    height: 40px;
+    color: green;
+    border-radius: 50%;
+    font-size: large;
+    font-weight:900;
+    border: 0;
+    margin: 5%;
+  }
+  .seveBT:active{
+    width: 37px;
+    height: 37px;
+  }
 }
-.seveBT{
-  width: 40px;
-  height: 40px;
-  color: green;
-  border-radius: 50%;
-  font-size: large;
-  font-weight:900;
-  border: 0;
-  margin-left: 20%;
+.content{
+  max-width: 80%;
+   padding: 35% 0 4% 20%;
+   overflow: auto;
+   height: auto;
+   z-index: -3;
 }
-.seveBT:active{
-  width: 37px;
-  height: 37px;
-}
+

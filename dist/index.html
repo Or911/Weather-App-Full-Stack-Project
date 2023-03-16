@@ -1,53 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
-<body>
-    <div class="window" >
-        <div >
-<h1>מידע מזג אויר בזמן אמת</h1>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="imgBack"></div>
 
-            <div class="searchBar input-group mb-3">
-                <input type="text" class="form-control" placeholder="Enter a country / city" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button type="button" class="btn btn-primary btn-lg" >Search</button>
-          </div>
+    <div class="window">
+      <h1>מידע מזג אויר בזמן אמת</h1>
+      <div class="searchBar">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter a country / city"
+          aria-label="Recipient's username"
+        />
+        <button type="button" class="btn btn-primary">Search</button>
+      </div>
+    </div>
 
-
-          <script id="Weather-template" type="text/x-handlebars-template">
-            <div class="cards card text-bg-light mb-3" style="max-width: 150vh;">
-              <div class="card-header" style="background-color: rgb(191, 192, 194);"><h3>{{name}}</h3></div>
-              <div class="container" style="background-color: rgb(11,94,215); color: azure;">
-                <div class="row">
-                  <div class="col">
-                    <h5 class="card-title">{{description}}</h5>
-                    <p class="card-text">{{temp}} :מעלות</p>
-                    <p class="card-text">{{humidity}}% :לחות</p>
-                    <p class="card-text"> {{wind}}: מהירות רוחות</p>
-                  </div>
-                  <div class="col">
-                    <img src="https://openweathermap.org/img/wn/{{icon}}@4x.png" alt="img">
-                    <button class="seveBT" data-name="{{name}}">{{sign}}</button>
-                  </div>
-                </div>
-              </div>
+    <script id="Weather-template" type="text/x-handlebars-template">
+      <div class="cards card text-bg-light mb-3">
+        <div
+          class="card-header"
+          style="background-color: rgb(191, 192, 194);"
+        ><h3>{{name}}</h3></div>
+        <div
+          class="container"
+          style="background-color: rgb(11,94,215); color: azure;"
+        >
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title">{{description}}</h5>
+              <p class="card-text">{{temp}} :מעלות</p>
+              <p class="card-text">{{humidity}}% :לחות</p>
+              <p class="card-text"> {{wind}}: מהירות רוחות</p>
             </div>
-          </script>
+            <div class="col">
+              <img
+                src="https://openweathermap.org/img/wn/{{icon}}@4x.png"
+                alt="img"
+              />
+            </div>
+            <div class="col control">
+              <button class="seveBT" data-name="{{name}}">{{sign}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
 
-          <div class="Weathers-container" style="max-width: 150vh; padding: 80px 0 0 20%;"></div>
-
-
-
+    <div class="Weathers-container content"></div>
 
     <script src="./jquery/dist/jquery.js"></script>
     <script src="./handlebars/dist/handlebars.js"></script>
     <script src="./render.js"></script>
     <script src="./model.js"></script>
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>
