@@ -43,6 +43,18 @@ class Serves {
     });
   }
 
+  updateWeather (name){
+    console.log(name);
+    return $.ajax({
+       method: "PUT",
+       url: `/weather/${name}`,
+     }).then((data) => {
+      this.newData[data.name] = data
+       return data
+       
+     });
+   }
+
   getSaveWeather() {
     return $.ajax({
       method: "GET",

@@ -7,7 +7,8 @@ const WeatherSchema = new schema({
     description:String,
     temp:String,
     humidity:String,
-    wind:String
+    wind:String,
+    time:Date
 })
 
 const Weather = mongoose.model('Weather', WeatherSchema);

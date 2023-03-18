@@ -12,6 +12,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/b92d9d3e02.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="imgBack"></div>
@@ -34,7 +35,38 @@
         <div
           class="card-header"
           style="background-color: rgb(191, 192, 194);"
-        ><h3>{{name}}</h3></div>
+        ><h3>{{name}}</h3><h4>{{time}}</h4></div>
+        <div
+          class="container"
+          style="background-color: rgb(11,94,215); color: azure;"
+        >
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title">{{description}}</h5>
+              <p class="card-text">{{temp}} :מעלות</p>
+              <p class="card-text">{{humidity}}% :לחות</p>
+              <p class="card-text"> {{wind}}: מהירות רוחות</p>
+            </div>
+            <div class="col">
+              <img
+                src="https://openweathermap.org/img/wn/{{icon}}@4x.png"
+                alt="img"
+              />
+            </div>
+            <div class="col control">
+              <button class="seveBT" data-name="{{name}}" >{{sign}}</button>
+              <button class="updateButtonD"><i class="fa-solid fa-sync fa-spin updateButton" ></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script id="Weather-template-update" type="text/x-handlebars-template">
+      <div
+          class="card-header"
+          style="background-color: rgb(191, 192, 194);"
+        ><h3>{{name}}</h3><h4>{{time}}</h4></div>
         <div
           class="container"
           style="background-color: rgb(11,94,215); color: azure;"
@@ -54,12 +86,11 @@
             </div>
             <div class="col control">
               <button class="seveBT" data-name="{{name}}">{{sign}}</button>
+              <button class="updateButtonD"><i class="fa-solid fa-sync fa-spin updateButton" ></i></button>
             </div>
           </div>
         </div>
-      </div>
     </script>
-
     <div class="Weathers-container content"></div>
 
     <script src="./jquery/dist/jquery.js"></script>

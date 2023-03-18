@@ -29,6 +29,13 @@ router.post("/weather", (req, res) => {
   res.status(406).send({error:"save successes"})
 });
 
+router.put("/weather/:name", (req, res) => {
+  let name = req.params.name;
+  managementData.updateDBLocation(name).then((data) => {
+    res.send(data);
+  });
+});
+
 router.delete("/weather/:name", (req, res) => {
   let name = req.params.name;
   managementData.deleteDBLocation(name).then((text) => {

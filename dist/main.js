@@ -25,6 +25,18 @@ $(".Weathers-container").on("click", ".seveBT", function () {
     });
   }
 });
+
+$(".Weathers-container").on("click", ".updateButtonD", function () {
+  $(this).children(".updateButton").css("animation-play-state", "running");
+  let html = $(this).parents(".cards")
+  let name = $(this).siblings(".seveBT").data("name");
+  console.log(name);
+  serves.updateWeather(name)
+  .then(data =>{
+    render.updateWeatherRender(data, html)
+  })
+});
+
 serves.getSaveWeather().then((data) => {
   let sign = "-";
   data.forEach((d) => {
