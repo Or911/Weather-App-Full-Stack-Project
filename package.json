@@ -16,6 +16,6 @@
     "jquery": "^3.6.4",
     "materialize-css": "^1.0.0-rc.2",
     "moment": "^2.29.4",
-    "mongoose": "^7.0.1"
+    "mongoose": "^7.0.2"
   }
 }

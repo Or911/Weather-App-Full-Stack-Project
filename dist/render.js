@@ -23,7 +23,6 @@ class Render {
     let source = $("#Weather-template-update").html();
     let template = Handlebars.compile(source);
     let newHtml = template(data);
-    console.log(html);
     html.empty();
     html.append(newHtml);
   }

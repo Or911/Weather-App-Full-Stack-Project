@@ -44,7 +44,6 @@ class Serves {
   }
 
   updateWeather (name){
-    console.log(name);
     return $.ajax({
        method: "PUT",
        url: `/weather/${name}`,
